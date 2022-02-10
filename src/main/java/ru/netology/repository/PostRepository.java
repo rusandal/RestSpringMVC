@@ -24,7 +24,7 @@ public class PostRepository {
 
   public Post save(Post post) {
     if (post.getId()==0 || !posts.containsKey(post.getId())){
-      post.setId(lastCurrentId.getAndIncrement());
+      post.setId(lastCurrentId.incrementAndGet());
       posts.put(post.getId(), post);
     } else {
       //post.setId(lastCurrentId.getAndIncrement());
